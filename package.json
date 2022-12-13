@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build": "tsc --noEmit false",
+    "build": "npm install && tsc --noEmit false",
     "start": "node dist/server.js",
     "start:dev": "npx nodemon",
     "prettier-check": "prettier --check .",
@@ -17,6 +17,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/cors": "^2.8.13",
     "@types/express": "^4.17.14",
     "@types/node": "^16.18.8",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
@@ -35,6 +36,7 @@
   },
   "dependencies": {
     "@types/pg": "^8.6.5",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.17.1",
     "pg": "^8.8.0"
