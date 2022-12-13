@@ -1,5 +1,5 @@
 import express from 'express'
-import taskRoutes from './routes/task'
+import taskRoutes from '../routes/task'
 import dotenv from 'dotenv'
 
 dotenv.config()
