@@ -13,8 +13,7 @@ export const getTasks = async (req: any, res: any) => {
     const response = await db.query(getGetTasksQuery(), null)
     res.status(200).send(response.rows)
   } catch (err) {
-    console.log(err)
-    res.status(400).send(err)
+    res.status(400).send({ error: 'SERVER_ERROR' })
   }
 }
 
@@ -25,7 +24,7 @@ export const addTask = async (req: any, res: any) => {
     const { rows } = await db.query(getAddTaskQuery(text), null)
     res.status(200).send(rows[0])
   } catch (err) {
-    res.status(400).send(err)
+    res.status(400).send({ error: 'SERVER_ERROR' })
   }
 }
 
@@ -36,7 +35,7 @@ export const updateTask = async (req: any, res: any) => {
     const { rows } = await db.query(getUpdateTaskQuery(id, text), null)
     res.status(200).send(rows[0])
   } catch (err) {
-    res.status(400).send(err)
+    res.status(400).send({ error: 'SERVER_ERROR' })
   }
 }
 
@@ -47,7 +46,7 @@ export const deleteTask = async (req: any, res: any) => {
     await db.query(getDeleteTaskQuery(id), null)
     res.status(200).send()
   } catch (err) {
-    res.status(400).send(err)
+    res.status(400).send({ error: 'SERVER_ERROR' })
   }
 }
 
@@ -58,8 +57,6 @@ export const updateTasks = async (req: any, res: any) => {
     await db.query(getUpdateTasksQuery(list), null)
     res.status(200).send({})
   } catch (err) {
-    console.log(err)
-
-    res.status(400).send(err)
+    res.status(400).send({ error: 'SERVER_ERROR' })
   }
 }
