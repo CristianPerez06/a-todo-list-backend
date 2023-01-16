@@ -6,7 +6,7 @@ const ErrorHandler = (err: any, req: any, res: any, next: any) => {
     stack: process.env.NODE_ENV === 'development' ? err.stack : {},
   }
 
-  res.status(errResp.stack).json(errResp)
+  res.status(errResp.status).json(errResp)
 }
 
 export default ErrorHandler
