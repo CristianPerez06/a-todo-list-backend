@@ -2,6 +2,7 @@ import express from 'express'
 import taskRoutes from './routes/task'
 import dotenv from 'dotenv'
 import cors from 'cors'
+import ErrorHandler from './middlewares/errorHandler'
 
 dotenv.config()
 
@@ -13,6 +14,9 @@ app.use(express.json())
 
 // routes
 app.use('/api/', taskRoutes)
+
+// error handler
+app.use(ErrorHandler)
 
 const port = process.env.PORT
 
