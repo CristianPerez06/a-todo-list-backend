@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "build": "npm install && tsc --noEmit false",
-    "start": "node dist/server.js",
-    "start:dev": "npx nodemon server.ts",
+    "start:prod": "node dist/server.js",
+    "start": "npx nodemon server.ts",
     "prettier-check": "prettier --check .",
     "prettier-fix": "prettier --write .",
     "lint-check": "eslint --ext ts --ext tsx --ext js --max-warnings 0 .",

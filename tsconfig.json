@@ -1,27 +1,18 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "allowUnreachableCode": false,
-    "allowUnusedLabels": false,
-    "declaration": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "lib": ["ES2018"],
+    "rootDir": ".",
+    "target": "ESNext",
     "module": "CommonJS",
-    "moduleResolution": "node",
-    "noEmit": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
-    "outDir": "dist",
-    "pretty": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "sourceMap": true,
+    "lib": ["dom"],
+    "outDir": "./build",
     "strict": true,
-    "target": "es2018"
+    "noImplicitAny": false,
+    "strictPropertyInitialization": false,
+    "baseUrl": "./",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   },
-  "include": ["**/*.ts"],
+  "include": ["./**/*"],
   "exclude": ["node_modules"]
 }
