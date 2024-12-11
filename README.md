@@ -14,5 +14,5 @@ A NodeJS server to manage todos.
 
 1. Run `npm install`
 2. Run `npm run husky-prepare`
-3. Create an `.env` file inside `src`. Add a new env variable named `DATABASE_URL` and fill its value with the URL pointing to your PostgreSQL DB.
+3. Create an `.env` file inside the `src` directory. Add a new environment variable named `DATABASE_URL` and set its value to the URL of your PostgreSQL database. Additionally, add a `PORT` variable and assign it the appropriate value.
 4. Run `npm start`

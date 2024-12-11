@@ -1,26 +1,19 @@
--- Database: todos-db
 -- DROP DATABASE IF EXISTS "todos-db";
 
-CREATE DATABASE "todos-db"
-    WITH
-    OWNER = postgres
-    ENCODING = 'UTF8'
-    LC_COLLATE = 'English_United States.1252'
-    LC_CTYPE = 'English_United States.1252'
-    TABLESPACE = pg_default
-    CONNECTION LIMIT = -1
-    IS_TEMPLATE = False;
+-- CREATE DATABASE "todos-db"
+--     WITH
+--     OWNER = postgres
+--     ENCODING = 'UTF8'
+--     TABLESPACE = pg_default
+--     CONNECTION LIMIT = -1
+--     IS_TEMPLATE = False;
 
-
--- CREATE Table: tasks
 CREATE TABLE tasks (
     id SERIAL PRIMARY KEY,
     text VARCHAR(255) NOT NULL,
     previous INTEGER
 );
 
-
--- CREATE Function: GetSortedTasksList 
 CREATE OR REPLACE FUNCTION GetSortedTasksList ()  
 	RETURNS TABLE(id INTEGER, text VARCHAR(255), previous INTEGER, rec_depth INTEGER)
 

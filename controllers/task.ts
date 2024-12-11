@@ -13,6 +13,7 @@ export const getTasks = async (req: any, res: any, next: any) => {
     const response = await db.query(getGetTasksQuery(), null)
     res.status(200).send(response.rows)
   } catch (err) {
+    console.log('aaaaa: ', err)
     next(err)
   }
 }
