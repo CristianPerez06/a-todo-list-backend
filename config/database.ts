@@ -1,5 +1,6 @@
 import { Pool } from 'pg'
 import dotenv from 'dotenv'
+import fs from 'fs'
 
 dotenv.config()
 
@@ -12,6 +13,9 @@ if (!dbUrl) {
 // DB Connection:
 const pool = new Pool({
   connectionString: dbUrl,
+  ssl: {
+    ca: fs.readFileSync(__dirname + '/ca.crt').toString(),
+  },
 })
 
 pool.on('connect', () => {
