@@ -14,7 +14,7 @@ if (!dbUrl) {
 const pool = new Pool({
   connectionString: dbUrl,
   ssl: {
-    ca: fs.readFileSync(__dirname + '/ca.crt').toString(),
+    ca: fs.readFileSync('./static/ca.crt').toString(),
   },
 })
 
